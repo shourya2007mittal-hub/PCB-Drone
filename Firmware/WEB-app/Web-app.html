@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>ESP32 Drone Controller</title>
+    <style>
+        body { font-family: sans-serif; background: #111; color: #fff; text-align: center; margin: 0; overflow: hidden; touch-action: none; }
+        .btn { padding: 15px 30px; font-size: 18px; margin: 10px; border: none; border-radius: 8px; cursor: pointer; }
+        .connect { background: #007bff; color: white; }
+        .arm { background: #28a745; color: white; }
+        .disarm { background: #dc3545; color: white; }
+        .container { display: flex; justify-content: space-around; align-items: center; height: 70vh; }
+        .joystick { width: 140px; height: 140px; background: #333; border-radius: 50%; position: relative; }
+        .stick { width: 50px; height: 50px; background: #00d2ff; border-radius: 50%; position: absolute; top: 45px; left: 45px; }
+    </style>
+</head>
+<body>
+
+    <h2>PCB Drone Controller</h2>
+    <button class="btn connect" onclick="connectBLE()">Connect BLE</button>
+    <button class="btn arm" onclick="setArm(true)">ARM</button>
+    <button class="btn disarm" onclick="setArm(false)">DISARM</button>
+
+    <div class="container">
+        <!-- Throttle/Yaw Stick -->
+        <div>
+            <p>Throttle / Yaw</p>
+            <div class="joystick" id="joyLeft"><div class="stick" id="stickLeft"></div></div>
+        </div>
+        <!-- Pitch/Roll Stick -->
+        <div>
+            <p>Pitch / Roll</p>
+            <div class="joystick" id="joyRight"><div class="stick" id="stickRight"></div></div>
+        </div>
+    </div>
+
+<script>
+const SERVICE_UUID = "4fafc201-1fb5-459e-8fcc-c5c9c331914b";
+const CHARACTERISTIC_UUID = "beb5483e-36e1-4688-b7f5-ea07361b26a8";
+
+let txChar;
+let isArmed = false;
+let throttle = 0, yaw = 0, pitch = 0, roll = 0;
+
+async function connectBLE() {
+    try {
+        const device = await navigator.bluetooth.requestDevice({
+            filters: [{ name: 'PCB_Drone_ESP32' }],
+            optionalServices: [SERVICE_UUID]
+        });
+        const server = await device.gatt.connect();
+        const service = await server.getPrimaryService(SERVICE_UUID);
+        txChar = await service.getCharacteristic(CHARACTERISTIC_UUID);
+        alert("Connected to Drone!");
+        setInterval(sendData, 50); // Send controls at 20Hz
+    } catch (e) {
+        alert("BLE Error: " + e);
+    }
+}
+
+function setArm(state) {
+    isArmed = state;
+}
+
+function sendData() {
+    if (!txChar) return;
+    let data = new Uint8Array([
+        isArmed ? 1 : 0,
+        Math.min(255, Math.max(0, throttle)),
+        Math.min(127, Math.max(-128, roll)),
+        Math.min(127, Math.max(-128, pitch)),
+        Math.min(127, Math.max(-128, yaw))
+    ]);
+    txChar.writeValueWithoutResponse(data);
+}
+
+// Touch Handling Logic for Joysticks
+function setupJoystick(elementId, stickId, callback) {
+    const zone = document.getElementById(elementId);
+    const stick = document.getElementById(stickId);
+    let rect = zone.getBoundingClientRect();
+
+    zone.addEventListener('touchmove', (e) => {
+        let touch = e.touches[0];
+        let x = touch.clientX - rect.left - 70;
+        let y = touch.clientY - rect.top - 70;
+        let dist = Math.min(50, Math.hypot(x, y));
+        let angle = Math.atan2(y, x);
+        
+        let finalX = Math.cos(angle) * dist;
+        let finalY = Math.sin(angle) * dist;
+
+        stick.style.transform = `translate(${finalX}px, ${finalY}px)`;
+        callback(finalX / 50, -finalY / 50);
+    });
+
+    zone.addEventListener('touchend', () => {
+        stick.style.transform = `translate(0px, 0px)`;
+        callback(0, 0);
+    });
+}
+
+setupJoystick('joyLeft', 'stickLeft', (x, y) => {
+    yaw = Math.round(x * 30);
+    throttle = Math.round((y + 1) * 127.5); // 0 to 255
+});
+
+setupJoystick('joyRight', 'stickRight', (x, y) => {
+    roll = Math.round(x * 30);
+    pitch = Math.round(y * 30);
+});
+</script>
+</body>
+</html>
