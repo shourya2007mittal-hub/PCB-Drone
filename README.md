@@ -4,6 +4,8 @@
 
 So I made a custom PCB based on Esp32 . It holds an IMU and a Barometer for control . It has a normal 4 Motor Layout 2 motors will move  clock wise and 2 will be  anti-clock wise direction. Same direction motor will be diagonally apposite to each other. It have  used a 3.7V battery for power and a boot converter so that I can provide 5V to the Motors as we are using  ESP32 so we could controle it by our phone through bluetooth  .I have also design a web based controller , So that you could connect and controle the Bionic-Bird through your phone.
 
+So I have a USB-C and battery pin (3.7V) then it is commonly connected to power with diodes for reverse polarity then It goes to a 3.3V voltage regulator (AP63203WU) with Reverse Polarity Protection and Pi Filter for sensors and ESp32  . and 5V regulator (MT3608) for motors . Then 3.3v it goes to IMU (MPU-6050) Barometer (BMP280) then through I2c these data are transferred to ESP32 where computation takes place and through Logic-Level Enhancement Mode MOSFET(AO3400A) circuit it amplifies  the PWN signal to 5V for the motors to work  
+
 ## Features
 
 - Base on ESP32 Module
