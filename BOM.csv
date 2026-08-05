@@ -1,5 +1,53 @@
-Item,Quantity,Price,Source
-PCBA,-,137.29,JLCPCB
-PCB Shipping,-,11.53,JLCPCB
-8520 Coreless Motor, 1 Set (of 4), 4.93,https://robu.in/product/8520-magnetic-micro-coreless-motor-for-micro-quadcopters-2xcw-2xccw/?gad_source=1&gad_campaignid=17416544847&gbraid=0AAAAADvLFWcXM71CF5VGCUPuhSM3GIS3o&gclid=CjwKCAjwpqHTBhAcEiwAj2Afukmlk-7LT5skm268zC5ovT8eBF2N_HZMrZxdeKb5yKWw0X3hAf2O-BoCd10QAvD_BwE
-3.7V battery ,1 , 3.46 , https://zbotic.in/product/kp-original-802540-1200mah-3-7vsingle-cell-rechargeable-lipo-battery/?gad_source=1&gad_campaignid=20903026778&gbraid=0AAAAACTNRdWLRhcpMUcAWikWvmjm5IaEf&gclid=Cj0KCQjw6_HSBhCpARIsANvVltb-53TOaS9U2QAEuqhELjeZlxSswxHf93L3Om0YbgSJSgd_bTN8Z70aApXEEALw_wcB
+
+Top design,Comment,footprint,quantitty,total price,product link
+Top Designator,Comment,Footprint,Qty,Total Price ($),Product link
+C2,47uf,0201,2,1.333,https://jlcpcb.com/partdetail/3127-KM476M450K25RR0VH2FP0/C2746
+C3,10uf,0201,20,0.586,https://jlcpcb.com/partdetail/2043-CL10A106MQ8NNNC/C1691
+"C11,C18,C19",10uf,0201,20,0.586,https://jlcpcb.com/partdetail/2043-CL10A106MQ8NNNC/C1691
+C4,100nf,0201,20,0.146,https://jlcpcb.com/partdetail/MurataElectronics-GRM033R61A104KE15D/C76934
+"C13,C14",100nf,0201,20,0.146,https://jlcpcb.com/partdetail/MurataElectronics-GRM033R61A104KE15D/C76934
+C5,22u,0201,8,2.5128,https://jlcpcb.com/partdetail/2211-1206X226K100NT/C1859
+C6,22uf,0201,8,2.5128,https://jlcpcb.com/partdetail/2211-1206X226K100NT/C1859
+"C10,C9",0.1uf,0201,20,0.118,https://jlcpcb.com/partdetail/270391-0201X104K100NT/C284966
+C12,0.1uf,0201,20,0.118,https://jlcpcb.com/partdetail/270391-0201X104K100NT/C284966
+"C15,C16,C7,C8",50nf,0201,8,6.532,https://jlcpcb.com/partdetail/launchip-LHC503SA2K0042NWB/C49233446
+"C1X1,C2X1,C3X1,C4X1,C5(1UF)1,C6(100NF)1",C,0805,22,0.3982,https://jlcpcb.com/partdetail/Sunlord-GZ2012D220TF/C1009
+"D1,D3",LED,0201,8,0.5448,https://jlcpcb.com/partdetail/XINGLIGHT-XL0201SURC/C3646923
+D2,D,0201,2,0.3944,https://jlcpcb.com/partdetail/EverlightElec-HIR204C/C5118
+"D4,D5,D6,D7",D_Schottky,0201,20,0.038,https://jlcpcb.com/partdetail/25797-0201WMJ010JTEE/C25054
+F1,Polyfuse,0201,20,0.038,https://jlcpcb.com/partdetail/25797-0201WMJ010JTEE/C25054
+D8,1N4001,D_DO-41_SOD81_P5.08mm_Vertical_KathodeUp,4,0.0776,https://jlcpcb.com/partdetail/49200031-1N4001/C47018536
+L1,2.2uh,0201,20,0.75,https://jlcpcb.com/partdetail/SHOUHAN-CY43_22UH/C2929416
+L2,4.7uf,0603,20,0.414,https://jlcpcb.com/partdetail/Sunlord-SDFL1608Q4R7KTF/C1034
+Q1,AO3401A,SOT-23,6,0.5688,https://jlcpcb.com/partdetail/Alpha_OmegaSemicon-AO3401A/C15127
+"Q2,Q3,Q4,Q5",AO3400A,SOT-23,12,1.008,https://jlcpcb.com/partdetail/Alpha_OmegaSemicon-AO3400A/C20917
+"R1,R2",33R,0201,20,0.062,https://jlcpcb.com/partdetail/416306-0201WMJ0330TEE/C423356
+"R3,R4",50K,0201,6,0.7632,https://jlcpcb.com/partdetail/10622-GL3549/C10083
+"R6,R7",1K,0201,20,0.05,https://jlcpcb.com/partdetail/259895-0201WMF1001TEE/C270365
+"R10,R12,R14,R8",100R,0201,20,0.056,https://jlcpcb.com/partdetail/288566-RC01W1000FT/C304499
+"R11,R13,R15,R9",10KR,0201,20,0.086,https://jlcpcb.com/partdetail/LIZElec-CR0201FH1002G/C100126
+"R1(10K)1,R2(100R)1",R,0805,6,0.5364,https://jlcpcb.com/partdetail/FuzetecTech-FSMD050_0805R/C181350
+U1,MT3608,SOT-23-6,5,0.5665,https://jlcpcb.com/partdetail/XI_AN_AerosemiTech-MT3608/C84817
+U2,AP63203WU,TSOT-23-6,2,2.2268,https://jlcpcb.com/partdetail/DiodesIncorporated-AP63203QWU7/C5248536
+U3,MPU-6050,InvenSense_QFN-24_4x4mm_P0.5mm,2,29.0122,https://jlcpcb.com/partdetail/TDKInvenSense-MPU6050/C24112
+U4,BMP280,Bosch_LGA-8_2x2.5mm_P0.65mm_ClockwisePinNumbering,2,5.2442,https://jlcpcb.com/partdetail/BoschSensortec-BMP388/C779278
+U5,ESP32-S3-WROOM-1,ESP32-S3-WROOM-1,2,10.327,https://jlcpcb.com/partdetail/3198300-ESP32_S3_WROOM_1N16R8/C2913202
+J1,USB_C_Receptacle_USB2.0_16P,USB_C_Receptacle_G-Switch_GT-USB-7010ASV,,,
+J2,Conn_01x02_Pin,JST_EH_B2B-EH-A_1x02_P2.50mm_Vertical,,,
+"M1,M2,M3,M4",Motor_DC,PinHeader_1x02_P2.54mm_Vertical,,,
+"SW1,SW2",SW_Push,SW_SPST_PTS810,,,
+Components (26 items),JLCPCB Assembly Order Components,-,26,64.35,-
+Setup Fee,Assembly Setup Fee,-,1,25.56,-
+Stencil,SMT Stencil Fee,-,1,8.21,-
+Feeders Loading fee,Feeder Loading Fee,-,1,33.66,-
+SMT Assembly,SMT Assembly Fee,-,1,1.23,-
+Hand-soldering labor fee,Labor Fee,-,1,3.58,-
+Manual Assembly,Manual Assembly Fee,-,1,0.46,-
+X-Ray Inspection,Inspection Fee,-,1,3.28,-
+Packaging fee,Packaging Fee,-,1,0.5,-
+Engineering fee,Engineering Fee,-,1,4.0,-
+Via Covering,Via Covering Fee,-,1,0.0,-
+Board,PCB Manufacturing Board Fee,-,1,9.9,-
+PCB Shipping, ,,-,11.53,JLCPCB
+8520 Coreless Motor, ,, 1 Set (of 4), 4.93,https://robu.in/product/8520-magnetic-micro-coreless-motor-for-micro-quadcopters-2xcw-2xccw/?gad_source=1&gad_campaignid=17416544847&gbraid=0AAAAADvLFWcXM71CF5VGCUPuhSM3GIS3o&gclid=CjwKCAjwpqHTBhAcEiwAj2Afukmlk-7LT5skm268zC5ovT8eBF2N_HZMrZxdeKb5yKWw0X3hAf2O-BoCd10QAvD_BwE
+3.7V battery, ,,1 , 3.46 , https://zbotic.in/product/kp-original-802540-1200mah-3-7vsingle-cell-rechargeable-lipo-battery/?gad_source=1&gad_campaignid=20903026778&gbraid=0AAAAACTNRdWLRhcpMUcAWikWvmjm5IaEf&gclid=Cj0KCQjw6_HSBhCpARIsANvVltb-53TOaS9U2QAEuqhELjeZlxSswxHf93L3Om0YbgSJSgd_bTN8Z70aApXEEALw_wcB
