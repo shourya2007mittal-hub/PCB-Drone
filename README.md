@@ -83,7 +83,17 @@ So I made a custom PCB based on Esp32 . It holds an IMU and a Barometer for cont
 
 ---
 
+---
 
+## 📊 Summary & Total Cost
+
+| Category | Total Cost (USD) |
+| :--- | :---: |
+| **PCBA Manufacturing & Components (26 Items)** | **$154.73** |
+| **PCB Shipping (JLCPCB)** | **$11.53** |
+| **External Motors (8520 Coreless Motor Set)** | **$4.93** |
+| **3.7V LiPo Battery (1200mAh)** | **$3.46** |
+| **Grand Total** | **`$174.65`** |
 
 
 
